@@ -1,4 +1,4 @@
-# Building Applications with React and Redux
+# Advanced React.js
 
 This is the final version of demo app for the [Advanced React.js](https://app.pluralsight.com/library/courses/reactjs-advanced).
 
