@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Advanced React Application Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript">
+        window.initialData = <%- JSON.stringify(initialData) -%>
+    </script>
+</head>
+<body>
+    <div id="root"><%- initialMarkup -%></div>
+
+    <script src="/vendor.js" charset="utf-8"></script>
+    <script src="/app.js" charset="utf-8"></script>
+</body>
+</html>

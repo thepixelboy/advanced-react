@@ -1,0 +1,56 @@
+{
+  "name": "advanced-react",
+  "version": "1.0.0",
+  "description": "Advanced React",
+  "main": "lib/server.js",
+  "repository": "https://github.com/thepixelboy/advanced-react",
+  "author": "Ruben Sobrino",
+  "license": "MIT",
+  "scripts": {
+    "dev": "NODE_PATH=./lib pm2 start lib/server.js --watch --interpreter babel-node --name appDev",
+    "wepback": "webpack -wd",
+    "test": "jest --watchAll",
+    "verify-tests": "jest --coverage",
+    "build-webpack": "webpack -p",
+    "build-node": "babel lib -d build --copy-files",
+    "start-prod": "NODE_ENV=production NODE_PATH=./build pm2 start build/server.js -i max --name appProd"
+  },
+  "babel": {
+    "presets": [
+      "react",
+      [ "env", { "targets": { "node": "current" } } ]
+    ],
+    "plugins": [
+      "transform-class-properties",
+      "transform-object-rest-spread"
+    ]
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.3",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.8.2",
+    "jest": "^23.1.0",
+    "react-test-renderer": "^16.4.0",
+    "webpack-cli": "^2.1.4"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "lodash.debounce": "^4.0.8",
+    "lodash.pickby": "^4.6.0",
+    "pm2": "^2.10.4",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "webpack": "^4.10.2"
+  }
+}
